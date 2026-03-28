@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HAKUNA MATATA - Inicio de Sesión POS</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e5e2e1",
+              "outline": "#a48c7a",
+              "on-surface-variant": "#ddc1ae",
+              "primary-container": "#fd8e00",
+              "on-error": "#690005",
+              "secondary": "#78dc77",
+              "on-primary-fixed": "#2e1500",
+              "secondary-fixed-dim": "#78dc77",
+              "inverse-primary": "#8f4e00",
+              "surface-container-lowest": "#0e0e0e",
+              "surface": "#131313",
+              "on-primary-fixed-variant": "#6d3a00",
+              "on-primary-container": "#613300",
+              "surface-container": "#201f1f",
+              "secondary-fixed": "#94f990",
+              "primary-fixed-dim": "#ffb77a",
+              "tertiary-container": "#d7a200",
+              "surface-container-low": "#1c1b1b",
+              "surface-dim": "#131313",
+              "surface-tint": "#ffb77a",
+              "on-tertiary-fixed": "#261a00",
+              "on-error-container": "#ffdad6",
+              "on-secondary": "#00390a",
+              "on-background": "#e5e2e1",
+              "secondary-container": "#00761f",
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed": "#002204",
+              "on-secondary-container": "#95fb92",
+              "surface-bright": "#393939",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-container": "#513b00",
+              "on-secondary-fixed-variant": "#005313",
+              "surface-container-high": "#2a2a2a",
+              "primary": "#ffb77a",
+              "on-primary": "#4c2700",
+              "error-container": "#93000a",
+              "primary-fixed": "#ffdcc2",
+              "error": "#ffb4ab",
+              "outline-variant": "#564334",
+              "background": "#131313",
+              "tertiary-fixed-dim": "#fabd00",
+              "tertiary": "#fabd00",
+              "on-tertiary-fixed-variant": "#5b4300",
+              "on-surface": "#e5e2e1",
+              "tertiary-fixed": "#ffdf9e",
+              "surface-variant": "#353534",
+              "on-tertiary": "#3f2e00"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface velvet-depth min-h-screen flex items-center justify-center p-6 lg:p-10">
+<main class="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-[2rem] shadow-[0_32px_64px_rgba(0,0,0,0.6)]">
+<!-- Left Side: Visual/Brand Identity Section -->
+<section class="hidden lg:flex flex-col justify-between p-16 relative overflow-hidden bg-surface-container-low">
+<div class="z-10">
+<div class="flex items-center gap-3 mb-12">
+<span class="material-symbols-outlined text-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<h1 class="font-headline font-black text-2xl tracking-widest text-primary-container">HAKUNA MATATA</h1>
+</div>
+<div class="space-y-6">
+<h2 class="text-5xl font-headline font-bold leading-tight text-on-surface">Servicio Preciso, <br/><span class="text-primary-container italic">Alma Vibrante.</span></h2>
+<p class="text-on-surface-variant text-lg max-w-md font-light leading-relaxed">El latido digital de su excelencia en hospitalidad. Inicie sesión para sincronizar su piso, cocina y personal.</p>
+</div>
+</div>
+<div class="z-10 flex gap-12">
+<div>
+<p class="text-xs font-headline uppercase tracking-[0.2em] text-on-surface-variant mb-1">Estaciones Activas</p>
+<p class="text-2xl font-headline font-bold text-on-surface">12</p>
+</div>
+<div>
+<p class="text-xs font-headline uppercase tracking-[0.2em] text-on-surface-variant mb-1">Estado del Sistema</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<p class="text-lg font-headline font-semibold text-secondary">Óptimo</p>
+</div>
+</div>
+</div>
+<!-- Background Decorative Image -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="Atmospheric bar background" class="w-full h-full object-cover" data-alt="low-light upscale cocktail bar atmosphere with warm amber glowing bottles and soft bokeh reflections on dark wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDqkdIUF1C-VzZBhnNcektBLbjgD5QmNCE6YY-pd_OyUADR5-L-zwcp5Qjphx1wPceFgPEzbtWFwIs8s5oNBg0Xn-AcaVBSlw8XOZ9B3ujuQzjld2Y-OADBX-vgNhlEA6AuPhgBO3i-EFUJSNIfHQnW8KAfeau8hnJ8UYgcXUrab8KfzH79t1HoqGQZDUGBpKmQt5PowIkb9mCwaBZ7UyUUjooWLK4wx_Qoo9IGgsx09UEhFnxDypxuYuwijHsIgzv3_DnDxLaQAk"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</section>
+<!-- Right Side: Login Form Canvas -->
+<section class="bg-surface-container flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 relative">
+<div class="w-full max-w-sm space-y-10">
+<!-- Mobile Branding -->
+<div class="lg:hidden flex flex-col items-center gap-4 mb-10">
+<div class="p-4 rounded-2xl bg-surface-container-high">
+<span class="material-symbols-outlined text-primary-container text-5xl" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<h1 class="font-headline font-black text-2xl tracking-widest text-primary-container text-center">HAKUNA MATATA</h1>
+</div>
+<div class="space-y-2 text-center lg:text-left">
+<h3 class="text-3xl font-headline font-bold text-on-surface">Portal del Personal</h3>
+<p class="text-on-surface-variant font-label">Ingrese sus credenciales para acceder a la terminal</p>
+</div>
+<form class="space-y-6">
+<!-- Username Field -->
+<div class="space-y-2">
+<label class="text-xs font-headline uppercase tracking-widest text-on-surface-variant ml-1" for="username">Nombre de Usuario</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">badge</span>
+</div>
+<input class="block w-full pl-14 pr-5 py-5 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-container transition-all duration-200" id="username" name="username" placeholder="ID de Personal o Nombre de Usuario" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-end px-1">
+<label class="text-xs font-headline uppercase tracking-widest text-on-surface-variant" for="password">Clave de Seguridad</label>
+<a class="text-xs font-label text-primary hover:text-primary-container transition-colors" href="#">¿Olvidó su Contraseña?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="block w-full pl-14 pr-5 py-5 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-container transition-all duration-200" id="password" name="password" placeholder="••••••••" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-5 flex items-center cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">visibility</span>
+</div>
+</div>
+</div>
+<!-- Login Button -->
+<button class="kinetic-gradient w-full py-5 rounded-xl text-on-primary-fixed font-headline font-extrabold text-lg uppercase tracking-widest shadow-[0_8px_24px_rgba(253,142,0,0.3)] active:scale-[0.98] transition-all duration-200 mt-4 flex items-center justify-center gap-3" type="submit">
+                        Enter Workspace
+                        <span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</form>
+<!-- Status indicators -->
+<div class="pt-8 flex flex-col items-center gap-6">
+<div class="h-px w-16 bg-outline-variant"></div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-highest">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-tighter text-on-surface-variant">Red Segura</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-highest">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-tighter text-on-surface-variant">V3.4.2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Subtle brand texture -->
+<div class="absolute bottom-10 right-10 opacity-5 pointer-events-none select-none">
+<span class="text-8xl font-black text-on-surface">HAKUNA</span>
+</div>
+</section>
+</main>
+<!-- Footer Copyright -->
+<footer class="fixed bottom-6 text-on-surface-variant/30 text-[10px] font-headline uppercase tracking-[0.3em]">
+        © 2024 Hakuna Matata Hospitality Systems. All Rights Reserved.
+    </footer>
+</body></html>

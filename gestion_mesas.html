@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#131313",
+              "tertiary-fixed": "#ffdf9e",
+              "error-container": "#93000a",
+              "on-tertiary-container": "#513b00",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#ffdcc2",
+              "on-surface": "#e5e2e1",
+              "surface-tint": "#ffb77a",
+              "on-surface-variant": "#ddc1ae",
+              "surface-dim": "#131313",
+              "secondary-fixed-dim": "#78dc77",
+              "on-tertiary-fixed-variant": "#5b4300",
+              "surface-container-low": "#1c1b1b",
+              "surface-container-high": "#2a2a2a",
+              "primary": "#ffb77a",
+              "on-tertiary": "#3f2e00",
+              "tertiary": "#fabd00",
+              "secondary": "#78dc77",
+              "on-primary-fixed": "#2e1500",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#fabd00",
+              "surface-container-lowest": "#0e0e0e",
+              "secondary-fixed": "#94f990",
+              "surface-container": "#201f1f",
+              "outline": "#a48c7a",
+              "inverse-primary": "#8f4e00",
+              "on-tertiary-fixed": "#261a00",
+              "on-secondary-fixed": "#002204",
+              "inverse-on-surface": "#313030",
+              "on-primary": "#4c2700",
+              "on-background": "#e5e2e1",
+              "on-secondary-container": "#95fb92",
+              "on-secondary-fixed-variant": "#005313",
+              "background": "#131313",
+              "primary-container": "#fd8e00",
+              "inverse-surface": "#e5e2e1",
+              "on-primary-container": "#613300",
+              "on-primary-fixed-variant": "#6d3a00",
+              "primary-fixed-dim": "#ffb77a",
+              "surface-variant": "#353534",
+              "error": "#ffb4ab",
+              "on-secondary": "#00390a",
+              "secondary-container": "#00761f",
+              "outline-variant": "#564334",
+              "surface-bright": "#393939",
+              "tertiary-container": "#d7a200",
+              "surface-container-highest": "#353534"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="bg-[#131313] shadow-[0_12px_32px_rgba(0,0,0,0.5)] flex justify-between items-center w-full px-10 py-6 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#FFB77A] text-3xl">restaurant</span>
+<h1 class="text-[#E5E2E1] font-['Plus_Jakarta_Sans'] text-2xl font-black italic tracking-tight">Hakuna Matata</h1>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-[#DDC1AE] hover:bg-[#393939] transition-all duration-200 px-4 py-2 rounded-xl active:scale-95">
+<span class="material-symbols-outlined">refresh</span>
+<span class="font-['Plus_Jakarta_Sans'] font-bold">Actualizar</span>
+</button>
+<div class="h-8 w-[1px] bg-surface-variant"></div>
+<button class="bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] px-6 py-2 rounded-xl font-bold font-['Plus_Jakarta_Sans'] shadow-[0_0_15px_rgba(253,142,0,0.4)] hover:scale-105 transition-transform">
+                Buscar
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-40 px-10 min-h-screen">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-2">Gestión de Mesas</h2>
+<p class="text-on-surface-variant text-lg">Plano: Sala Principal y Terraza</p>
+</div>
+<!-- Legend Section -->
+<div class="flex gap-6 items-center p-4 rounded-xl bg-surface-container-low border-none">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_rgba(120,220,119,0.5)]"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Disponible</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error shadow-[0_0_8px_rgba(255,180,171,0.5)]"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Ocupado</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary shadow-[0_0_8px_rgba(250,189,0,0.5)]"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Por Pagar</span>
+</div>
+</div>
+</div>
+<!-- Bento-Style Floor Plan Grid -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Zone A: Main Bar & Entry -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low rounded-3xl p-8 relative overflow-hidden h-[600px]">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-[8rem] font-black text-white opacity-5 select-none">BAR</span>
+</div>
+<h3 class="text-on-surface-variant font-label uppercase tracking-widest text-sm mb-10">Zona Norte / Bar</h3>
+<div class="grid grid-cols-2 gap-8">
+<!-- Table 01 - Occupied -->
+<div class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<span class="text-3xl font-headline font-bold text-on-surface">01</span>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="text-[0.7rem] uppercase tracking-tighter text-on-surface-variant">Ocupación</p>
+<p class="text-xl font-headline font-bold text-on-surface">4/4</p>
+</div>
+</div>
+<!-- Table 02 - Available -->
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<span class="text-3xl font-headline font-bold text-on-surface">02</span>
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div>
+<p class="text-[0.7rem] uppercase tracking-tighter text-on-surface-variant">Ocupación</p>
+<p class="text-xl font-headline font-bold text-on-surface">0/2</p>
+</div>
+</div>
+<!-- Table 03 - Reserved/Soon to Pay -->
+<div class="aspect-square bg-tertiary-container/20 border border-tertiary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<span class="text-3xl font-headline font-bold text-on-surface">03</span>
+<span class="material-symbols-outlined text-tertiary">payments</span>
+</div>
+<div>
+<p class="text-[0.7rem] uppercase tracking-tighter text-on-surface-variant">Ocupación</p>
+<p class="text-xl font-headline font-bold text-on-surface">2/2</p>
+</div>
+</div>
+<!-- Table 04 - Available -->
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<span class="text-3xl font-headline font-bold text-on-surface">04</span>
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div>
+<p class="text-[0.7rem] uppercase tracking-tighter text-on-surface-variant">Ocupación</p>
+<p class="text-xl font-headline font-bold text-on-surface">0/4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Zone B: Main Dining Hall -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container rounded-3xl p-8 relative min-h-[600px]">
+<h3 class="text-on-surface-variant font-label uppercase tracking-widest text-sm mb-10">Sala Principal</h3>
+<div class="grid grid-cols-3 md:grid-cols-4 gap-6">
+<!-- Big Table 05 - Occupied -->
+<div class="col-span-2 row-span-2 aspect-[2/1] bg-error-container/30 border border-error/20 rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-6xl font-headline font-black text-on-surface">05</span>
+<p class="text-sm font-label text-error mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">timer</span>
+                                    Desde 19:42
+                                </p>
+</div>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant mb-1">Ocupación</p>
+<p class="text-4xl font-headline font-bold text-on-surface">8/12</p>
+</div>
+<div class="bg-surface-bright/50 px-4 py-2 rounded-xl text-on-surface font-bold">
+                                $412.00
+                            </div>
+</div>
+</div>
+<!-- Regular Tables -->
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">06</span>
+<p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
+</div>
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">07</span>
+<p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
+</div>
+<div class="aspect-square bg-tertiary-container/20 border border-tertiary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">08</span>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-bold text-lg">Cuenta</span>
+</div>
+</div>
+<div class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">09</span>
+<p class="text-xl font-headline font-bold text-on-surface">4/4</p>
+</div>
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">10</span>
+<p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
+</div>
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">11</span>
+<p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
+</div>
+<!-- Decorative Divider Element -->
+<div class="col-span-full h-px bg-surface-variant my-4"></div>
+<!-- Terrace Group -->
+<div class="col-span-4 grid grid-cols-4 gap-6">
+<div class="aspect-square bg-surface-container-high rounded-2xl flex items-center justify-center border-2 border-dashed border-outline-variant/30 text-outline-variant italic font-label">
+                            Puerta de Terraza
+                        </div>
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">T1</span>
+<p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
+</div>
+<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">T2</span>
+<p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
+</div>
+<div class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<span class="text-3xl font-headline font-bold text-on-surface">T3</span>
+<p class="text-xl font-headline font-bold text-on-surface">2/2</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Floating Stats Glassmorphism -->
+<div class="fixed right-10 top-1/2 -translate-y-1/2 w-64 glass-morphism rounded-[2rem] p-8 space-y-8 shadow-2xl border border-white/5">
+<div>
+<p class="text-[0.6rem] uppercase tracking-widest text-on-surface-variant mb-2">Estado en Vivo</p>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-sm font-label">Mesas Activas</span>
+<span class="text-xl font-headline font-bold text-primary">06/15</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[40%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-sm">9 Mesas Libres</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-sm">4 Mesas Ocupadas</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-sm">2 Cuentas Pendientes</span>
+</div>
+</div>
+<button class="w-full bg-surface-bright hover:bg-surface-variant text-on-surface py-4 rounded-2xl font-bold transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_circle</span>
+                Nueva Reserva
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#1C1B1B]/90 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 transition-all duration-150 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">table_bar</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Tables</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Menu/POS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Administración</span>
+</a>
+</nav>
+</body></html>
