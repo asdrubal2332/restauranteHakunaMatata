@@ -1,13 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Hakuna Matata</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    enlazados estilos y script
-    <script src="script.js"></script>
-</body>
-</html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#131313",
+              "tertiary-fixed": "#ffdf9e",
+              "error-container": "#93000a",
+              "on-tertiary-container": "#513b00",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#ffdcc2",
+              "on-surface": "#e5e2e1",
+              "surface-tint": "#ffb77a",
+              "on-surface-variant": "#ddc1ae",
+              "surface-dim": "#131313",
+              "secondary-fixed-dim": "#78dc77",
+              "on-tertiary-fixed-variant": "#5b4300",
+              "surface-container-low": "#1c1b1b",
+              "surface-container-high": "#2a2a2a",
+              "primary": "#ffb77a",
+              "on-tertiary": "#3f2e00",
+              "tertiary": "#fabd00",
+              "secondary": "#78dc77",
+              "on-primary-fixed": "#2e1500",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#fabd00",
+              "surface-container-lowest": "#0e0e0e",
+              "secondary-fixed": "#94f990",
+              "surface-container": "#201f1f",
+              "outline": "#a48c7a",
+              "inverse-primary": "#8f4e00",
+              "on-tertiary-fixed": "#261a00",
+              "on-secondary-fixed": "#002204",
+              "inverse-on-surface": "#313030",
+              "on-primary": "#4c2700",
+              "on-background": "#e5e2e1",
+              "on-secondary-container": "#95fb92",
+              "on-secondary-fixed-variant": "#005313",
+              "background": "#131313",
+              "primary-container": "#fd8e00",
+              "inverse-surface": "#e5e2e1",
+              "on-primary-container": "#613300",
+              "on-primary-fixed-variant": "#6d3a00",
+              "primary-fixed-dim": "#ffb77a",
+              "surface-variant": "#353534",
+              "error": "#ffb4ab",
+              "on-secondary": "#00390a",
+              "secondary-container": "#00761f",
+              "outline-variant": "#564334",
+              "surface-bright": "#393939",
+              "tertiary-container": "#d7a200",
+              "surface-container-highest": "#353534"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] shadow-[0_12px_32px_rgba(0,0,0,0.5)] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-10 py-6 max-w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#FFB77A] text-3xl" data-icon="restaurant">restaurant</span>
+<h1 class="text-[#E5E2E1] font-black italic font-['Plus_Jakarta_Sans'] text-2xl font-bold tracking-tight">Hakuna Matata</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex bg-[#1C1B1B] rounded-full px-4 py-2 items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#78dc77]"></span>
+<span class="font-label text-xs font-medium uppercase tracking-widest text-on-surface-variant">COCINA EN VIVO</span>
+</div>
+<button class="text-[#DDC1AE] hover:bg-[#393939] transition-all duration-200 p-2 rounded-lg scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="p-10 flex flex-col gap-10 lg:flex-row lg:items-start">
+<!-- Kitchen Tickets Section (Bento Grid Style) -->
+<section class="flex-1 space-y-6">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Tickets de Cocina</h2>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-[0.2em] mt-1">Pedidos Pendientes: 04</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Ticket 1: High Priority -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-lg border-l-4 border-primary relative overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-primary font-headline text-2xl font-extrabold tracking-tighter">MESA 12</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="schedule">schedule</span>
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">14:02 min transcurridos</span>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container font-label text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">Urgente</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center group/item cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="bg-surface-container-high w-8 h-8 flex items-center justify-center rounded-lg text-primary font-bold">2</span>
+<span class="font-headline text-base font-bold">Asado de Kudu</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover/item:opacity-100 transition-opacity" data-icon="check_circle">check_circle</span>
+</div>
+<div class="pl-12">
+<div class="bg-surface-container flex items-center gap-2 p-2 rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="priority_high">priority_high</span>
+<p class="text-xs font-label text-on-surface-variant italic leading-tight">Medio rojo, chimichurri extra al lado.</p>
+</div>
+</div>
+<div class="flex justify-between items-center group/item cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="bg-surface-container-high w-8 h-8 flex items-center justify-center rounded-lg text-primary font-bold">1</span>
+<span class="font-headline text-base font-bold">Alitas Peri-Peri</span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-3">
+<button class="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary-container font-label text-xs font-bold py-3 rounded-xl scale-95 active:opacity-80 transition-all uppercase tracking-widest">Marcar Como Listo</button>
+<button class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-xl text-on-surface-variant hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Ticket 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-lg border-l-4 border-on-tertiary-fixed relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-on-tertiary-fixed-variant font-headline text-2xl font-extrabold tracking-tighter">MESA 05</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="schedule">schedule</span>
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">06:45 min transcurridos</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 cursor-pointer">
+<span class="bg-surface-container-high w-8 h-8 flex items-center justify-center rounded-lg text-on-surface font-bold">4</span>
+<span class="font-headline text-base font-bold">Hamburguesa de Cebra</span>
+</div>
+<div class="flex items-center gap-4 cursor-pointer">
+<span class="bg-surface-container-high w-8 h-8 flex items-center justify-center rounded-lg text-on-surface font-bold">2</span>
+<span class="font-headline text-base font-bold">Papas Fritas de Camote</span>
+</div>
+<div class="pl-12">
+<div class="bg-surface-container flex items-center gap-2 p-2 rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="info">info</span>
+<p class="text-xs font-label text-on-surface-variant italic leading-tight">Una hamburguesa SIN CEBOLLAS.</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-on-surface font-label text-xs font-bold py-3 rounded-xl hover:bg-surface-bright transition-all uppercase tracking-widest">Procesar Pedido</button>
+</div>
+</div>
+<!-- Ticket 3 -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-lg border-l-4 border-surface-container-highest relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-on-surface-variant font-headline text-2xl font-extrabold tracking-tighter">MESA 21</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="schedule">schedule</span>
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">02:10 min transcurridos</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 cursor-pointer">
+<span class="bg-surface-container-high w-8 h-8 flex items-center justify-center rounded-lg text-on-surface font-bold">1</span>
+<span class="font-headline text-base font-bold">Ensalada Chakalaka</span>
+</div>
+</div>
+<div class="mt-8 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-on-surface font-label text-xs font-bold py-3 rounded-xl hover:bg-surface-bright transition-all uppercase tracking-widest">Procesar Pedido</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Inventory Sidebar -->
+<aside class="w-full lg:w-96 space-y-8">
+<div class="bg-surface-container-low rounded-[1.5rem] p-8 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<div class="flex justify-between items-center mb-8 relative z-10">
+<h3 class="font-headline text-xl font-bold">Alertas de Inventario</h3>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="space-y-6">
+<!-- Low Stock Item -->
+<div class="relative">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline text-sm font-bold">Lomo de Kudu Fresco</span>
+<span class="text-[10px] font-label font-bold text-error uppercase tracking-widest bg-error-container/20 px-2 py-0.5 rounded">Crítico</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 12%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">3.2kg restante</span>
+<span class="text-[10px] font-label text-error font-bold">Reabastecer Ahora</span>
+</div>
+</div>
+<!-- Medium Stock Item -->
+<div class="relative">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline text-sm font-bold">Salsa Peri-Peri</span>
+<span class="text-[10px] font-label font-bold text-tertiary uppercase tracking-widest bg-tertiary-container/10 px-2 py-0.5 rounded">Bajo</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 35%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">14 litros restantes</span>
+<span class="text-[10px] font-label text-on-surface-variant">Verificar Proveedor</span>
+</div>
+</div>
+<!-- Healthy Stock Item -->
+<div class="relative">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline text-sm font-bold">Papas Dulces</span>
+<span class="text-[10px] font-label font-bold text-secondary uppercase tracking-widest bg-secondary-container/10 px-2 py-0.5 rounded">Saludable</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 82%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">124kg restante</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 py-4 bg-surface-container text-on-surface-variant font-label text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:text-primary hover:bg-surface-bright transition-all">
+                    Ver Inventario Completo
+                </button>
+</div>
+<!-- Suppliers Quick Action -->
+<div class="bg-gradient-to-br from-surface-container-high to-surface-container-low rounded-[1.5rem] p-8 shadow-xl">
+<h4 class="font-headline text-lg font-bold mb-6">Compra Rápida</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-bright transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close up of a wooden crate filled with fresh vegetables and fruits with a rustic farm feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtQmcG2Rdg6hbP17WCcKjtBoU9gt5xaoM_CgdSjIjEwekPuhLJSCzjaGjDZk_UNM2-MFdLz4yHiLlNWHW8-kpM-1-fd2HqZ4LzALAuHSmTl2s4O3BWD3QMpAdaWoUFJkKasJ5IL0-ZnRpflDRB--Q8zmhmydHQ5USXvlKP4qLsulI1P-bbq_yZWgF5DyOGbV9ADVB4bDSW856CUr16iVzsX9aBpmLXIA1okoLLooSONxGJsilGgKTF1KtF6eBvnQsW9tMlL2M4GbY"/>
+</div>
+<div>
+<p class="font-headline text-sm font-bold">La Granja de la Sabana</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Carnes y Productos</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-on-surface-variant text-lg" data-icon="call">call</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-bright transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A shelf in a modern pantry with neatly organized glass jars and specialty ingredients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkL0tdxVvobqFkLQMw7YnUSfGWkrgYdeEK5BYFl7StjEy-TIzCshmWHvgRKlXfdyIdQrkOOTIrj21YnuGl5jbOh7gKr-T-rVdsO6e9sBPUxglCOJpFYQAZyGpfza587a47RVh_RtBYs9FF4revgDVrRBusYuDJa0JGsagRYte48XXsB5nTZRrFYbK8cEXi0MKwJubbrJQNhxcxxnudTMx9aQNEIVBsAzU2U4E1_1iby1-PRaF3ZzrIwV-4rTEWu_7Bh2jjWyImYW8"/>
+</div>
+<div>
+<p class="font-headline text-sm font-bold">Global Spice Co.</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Productos Secos</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-on-surface-variant text-lg" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#1C1B1B]/90 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="table_bar">table_bar</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Mesas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Pedidos</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="point_of_sale" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Menú/POS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Administración</span>
+</a>
+</nav>
+</body></html>
+
