@@ -1,3 +1,44 @@
+<?php
+session_start();
+require 'bd.php';
+
+if (!empty($_SESSION['usuario'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    if ($username === '' || $password === '') {
+        $error = 'Ingrese usuario y contraseña.';
+    } else {
+        $stmt = mysqli_prepare($conexionBd, "SELECT id_usuario, nombre, email, contrasena_hash, id_rol, activo FROM usuarios WHERE email = ? OR nombre = ? LIMIT 1");
+        mysqli_stmt_bind_param($stmt, 'ss', $username, $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $user = mysqli_fetch_assoc($result);
+
+        if ($user && $user['activo'] == 1 && md5($password) === $user['contrasena_hash']) {
+            $_SESSION['usuario'] = [
+                'id_usuario' => $user['id_usuario'],
+                'nombre' => $user['nombre'],
+                'email' => $user['email'],
+                'id_rol' => $user['id_rol'],
+            ];
+
+            header('Location: index.php');
+            exit;
+        }
+
+        $error = 'Usuario o clave incorrectos.';
+    }
+}
+?>
+
 <!DOCTYPE html>
 
 <html class="dark" lang="en"><head>
@@ -126,7 +167,12 @@
 <h3 class="text-3xl font-headline font-bold text-on-surface">Portal del Personal</h3>
 <p class="text-on-surface-variant font-label">Ingrese sus credenciales para acceder a la terminal</p>
 </div>
-<form class="space-y-6">
+<?php if ($error): ?>
+<div class="rounded-2xl bg-error-container/10 border border-error-container text-on-error-container px-4 py-3">
+    <?php echo htmlspecialchars($error); ?>
+</div>
+<?php endif; ?>
+<form class="space-y-6" method="POST" action="login.php">
 <!-- Username Field -->
 <div class="space-y-2">
 <label class="text-xs font-headline uppercase tracking-widest text-on-surface-variant ml-1" for="username">Nombre de Usuario</label>

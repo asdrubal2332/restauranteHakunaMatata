@@ -9,7 +9,7 @@ if (!$id) {
 }
 
 // Obtener usuario
-$stmt = $pdo->prepare("SELECT * FROM gestusuarios WHERE id = ?");
+$stmt = $conexionBd->prepare("SELECT * FROM gestusuarios WHERE id = ?");
 $stmt->execute([$id]);
 $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
