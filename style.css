@@ -14,3 +14,42 @@
 body {
   min-height: max(884px, 100dvh);
 }
+
+/* Evitar que el contenido inferior quede tapado por el nav fijo */
+main {
+  padding-bottom: 120px;
+  background: linear-gradient(180deg, #151515 0%, #0c0c0d 90%);
+}
+
+aside {
+  min-height: 760px;
+}
+
+.bg-gradient-to-br {
+  min-height: 260px;
+}
+
+.glass-morphism {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(18, 18, 18, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* Boton Enter Workspace */
+.kinetic-gradient {
+  background: linear-gradient(135deg, #ff9d1e 0%, #ffb400 45%, #ffdd7a 100%);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(255, 149, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.kinetic-gradient:hover {
+  background: linear-gradient(135deg, #ffb33b 0%, #ffd97c 45%, #fff1c7 100%);
+  transform: translateY(-1px);
+}
+
+.kinetic-gradient:active {
+  transform: scale(0.98);
+}

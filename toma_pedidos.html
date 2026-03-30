@@ -96,123 +96,19 @@
 <!-- Menu Section -->
 <div class="flex-1 flex flex-col gap-8">
 <!-- Categories -->
-<nav class="flex gap-4">
-<button class="px-8 py-4 bg-gradient-to-tr from-primary to-primary-container text-on-primary-container font-headline font-extrabold rounded-xl shadow-lg transition-transform active:scale-95">
+<nav id="hm-categoria-buttons" class="flex gap-4">
+<button data-categoria="Bebidas" class="px-8 py-4 bg-gradient-to-tr from-primary to-primary-container text-on-primary-container font-headline font-extrabold rounded-xl shadow-lg transition-transform active:scale-95">
                     Bebidas
                 </button>
-<button class="px-8 py-4 bg-surface-container-high text-on-surface-variant font-headline font-bold rounded-xl hover:bg-surface-bright transition-all">
+<button data-categoria="Comidas" class="px-8 py-4 bg-surface-container-high text-on-surface-variant font-headline font-bold rounded-xl hover:bg-surface-bright transition-all">
                     Comidas
                 </button>
-<button class="px-8 py-4 bg-surface-container-high text-on-surface-variant font-headline font-bold rounded-xl hover:bg-surface-bright transition-all">
+<button data-categoria="Postres" class="px-8 py-4 bg-surface-container-high text-on-surface-variant font-headline font-bold rounded-xl hover:bg-surface-bright transition-all">
                     Postres
                 </button>
 </nav>
 <!-- Menu Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Item Card 1 -->
-<div class="group bg-surface-container-high rounded-xl overflow-hidden shadow-xl hover:shadow-primary/10 transition-all cursor-pointer">
-<div class="h-48 w-full overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Vibrant tropical cocktail with orange garnish and ice in a chilled glass, dramatic warm bar lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmIIjQv0_n0hlBQpfeJb5pdl7c3osIterrjxd0ggFha8Bz13DMdgZJdtxRGusdBCrPdZDSWwOi9FeXBUsgftnpdYSs-mv6ZO30T3NqpOuYQR2F25_cjaYFo5jG3iMBckxmDwqYVc5fh2Y94DVDvaUwcys-oP9Rbx9EgzoeEMP-_lYIVHRaCnoanh09y64rbVRxekBgHSYCC2nnWHvhoBlDq-QK0JtF3_kIntQ_0SYpQgsyXQpbhQQtoUE7of-qt-2kKcsRPnNib8"/>
-</div>
-<div class="p-5 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<h3 class="font-headline text-lg font-bold text-on-surface leading-tight"> Margarita</h3>
-<span class="font-headline font-extrabold text-primary">$14.500</span>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2">Tequila de primera calidad, zumo de lima fresco y nuestro sirope de hibisco casero con borde de sal.</p>
-<button class="w-full mt-2 py-3 bg-surface-container rounded-lg border border-outline-variant/20 group-hover:bg-primary group-hover:text-on-primary font-bold flex items-center justify-center gap-2 transition-all">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            AGREGAR AL PEDIDO 
-                        </button>
-</div>
-</div>
-<!-- Item Card 2 -->
-<div class="group bg-surface-container-high rounded-xl overflow-hidden shadow-xl hover:shadow-primary/10 transition-all cursor-pointer">
-<div class="h-48 w-full overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Classic old fashioned cocktail with a large ice cube and orange peel twist on a dark wooden bar surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcjudlygmrWlmc7sfY74teumPkVY4W3fuvjOu0MbBnr9S2ZrR4tV1K4GfqPq518UiCgPyvlZvrqALz2ZmHtjErbmbF4RHfgjr7jJaC-Zq5in14Aw7SVpjLvsuUbSumptKP4OxJo845Wqgvc8MZ-HypvG7sY5onc2l-RzFnvCmDyCtGSj6AKDp_UNqafUpdS5G6pUqMH2yLeOWNrueMZX98Yfr2fU_foLVSrHd5tMvyLX9UBv8fIpjRhLlWVd3WENN2R1AeW0Z2cDA"/>
-</div>
-<div class="p-5 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Bourbon Ahumado</h3>
-<span class="font-headline font-extrabold text-primary">$16.000</span>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2">Bourbon ahumado, reducción de jarabe de arce y amargo de nuez negra con cáscara de naranja tostada.</p>
-<button class="w-full mt-2 py-3 bg-surface-container rounded-lg border border-outline-variant/20 group-hover:bg-primary group-hover:text-on-primary font-bold flex items-center justify-center gap-2 transition-all">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            AGREGAR AL PEDIDO
-                        </button>
-</div>
-</div>
-<!-- Item Card 3 -->
-<div class="group bg-surface-container-high rounded-xl overflow-hidden shadow-xl hover:shadow-primary/10 transition-all cursor-pointer">
-<div class="h-48 w-full overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Artisanal craft beer in a tall glass with perfect foam head against a dark moody pub background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqk6VQFHKDWUrT7_MAy-6qA1BguJCnjkXmY4gqigGeG6e5FTkDLT40j1Jdm4r_urOKZ7swKf7xkXOs95kUYePmvK158YlHYtCGQpt8XoOScp7m7us6s38Ewi9P2lgSlW2RXTj2k2TRMDBcTGo6V2qFzFhvJYVMQwZhlWj_6d1esKcxrbWxtf8sQaVnn_vtHr0G1l-ZO78pd75yfLox6Ax9h5McKMsIAKD-0DPw2ga6MdDE8qx3Vtj_98TAmiqXscwtyDNO81IPp8g"/>
-</div>
-<div class="p-5 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">jugo tropical</h3>
-<span class="font-headline font-extrabold text-primary">$9.000</span>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2">Notas jugosas y tropicales con un final suave y cremoso. Selección de productos artesanales locales..</p>
-<button class="w-full mt-2 py-3 bg-surface-container rounded-lg border border-outline-variant/20 group-hover:bg-primary group-hover:text-on-primary font-bold flex items-center justify-center gap-2 transition-all">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            AGRGAR AL PEDIDO
-                        </button>
-</div>
-</div>
-<!-- Item Card 4 -->
-<div class="group bg-surface-container-high rounded-xl overflow-hidden shadow-xl hover:shadow-primary/10 transition-all cursor-pointer">
-<div class="h-48 w-full overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Tall glass of refreshing iced tea with mint leaves and lemon slice, backlight highlighting condensation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMi_izOHhI9fwoTZPdD1gcLYwvVKvU-o7y-GxMvH1hTWYlrSLTqRkQ2_W1Cn4IGQQBNEem4rqZ04hpXXe3OfgNUNYYX_sBebD-wDMNilPRGuajB3d0_QsjiEpPh7owRUieazmmPZ-deMmg7Jo0Zk25YCtauFyhrODCh4A0-6le7YoOkBp0c5ccnPJqDrkTDE7l6447daT9vm_CQDvZFMTw3EPM2Fa3g4irE-enN1-V4w01r0mdt5lStRcZJ-Wlmtg38ntxzelbmFo"/>
-</div>
-<div class="p-5 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Ginger &amp; Mint Fusion</h3>
-<span class="font-headline font-extrabold text-primary">$14.500</span>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2">Cerveza de jengibre picante, menta fresca, lima y un chorrito de agua con gas. Sin alcohol.</p>
-<button class="w-full mt-2 py-3 bg-surface-container rounded-lg border border-outline-variant/20 group-hover:bg-primary group-hover:text-on-primary font-bold flex items-center justify-center gap-2 transition-all">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            AGREGAR AL PEDIDO
-                        </button>
-</div>
-</div>
-<!-- Item Card 5 -->
-<div class="group bg-surface-container-high rounded-xl overflow-hidden shadow-xl hover:shadow-primary/10 transition-all cursor-pointer">
-<div class="h-48 w-full overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Premium red wine being poured into a large crystal glass with elegant reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4PYXFecbNJTcIZq1dm9eYVMFRwjaJY7gKo05Lk1dqma1-ni0Cnwi2huUH-1bHDX2W2Vps2FkbMyOMWikLCmylah6Zjk-z9bJ3K4G6Eo8d-PTxAJveqZMbd9Vb-ftC8T2iROUblOEA1DqWunWU6RK0eWsMIV-XM-6QqP5oWK4zYrVEDFXkMEkudYITJOvHIvCrzLGw4zbLQVANDSEKvMSjuBQTEF-p1CpP7m57YYDNNpWckaeKh3rf7R6tpFkcImpasQxiT9bfEdg"/>
-</div>
-<div class="p-5 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Reserve Malbec</h3>
-<span class="font-headline font-extrabold text-primary">$18.000</span>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2">Tonos violetas intensos con notas de mora, ciruela y sutiles toques de roble avainillado.</p>
-<button class="w-full mt-2 py-3 bg-surface-container rounded-lg border border-outline-variant/20 group-hover:bg-primary group-hover:text-on-primary font-bold flex items-center justify-center gap-2 transition-all">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            AGREGAR AL PEDIDO
-                        </button>
-</div>
-</div>
-<!-- Item Card 6 -->
-<div class="group bg-surface-container-high rounded-xl overflow-hidden shadow-xl hover:shadow-primary/10 transition-all cursor-pointer">
-<div class="h-48 w-full overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Exotic tiki cocktail in a ceramic mug with pineapple leaves and multiple straws" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV9K5X7nJtXZtNqy-23hqHHfnyKKz4exs8Nulbh0E0MJ6ib82kxIqrupK1d3UMBKmwCYPhqj9O4uCTMMS0DMZFr6NeHigsn317ogk0DJfgu9GMr4MqXLn1E7h7IpOqrwqFBOMcpZxpkVQcG8ERKuJeUKZU7PQebml1AQt2YpN1hJC2YiIM9bWDWBYxPbFJlukMEdOJ-jl0QKHmqK-72QqtztUd3LwSQ8L4zMdJvRiZC0cg2SStakNtj9PtgD0gws8fAQPv957rojU"/>
-</div>
-<div class="p-5 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Jungle Bird</h3>
-<span class="font-headline font-extrabold text-primary">$15.000</span>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2">Ron oscuro, Campari, jugo de piña y lima fresca. La escapada agridulce perfecta.</p>
-<button class="w-full mt-2 py-3 bg-surface-container rounded-lg border border-outline-variant/20 group-hover:bg-primary group-hover:text-on-primary font-bold flex items-center justify-center gap-2 transition-all">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            AGREGAR AL PEDIDO
-                        </button>
-</div>
-</div>
-</div>
-</div>
+<div id="hm-menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 <!-- Sidebar / Current Bill -->
 <aside class="w-[400px] flex flex-col gap-6 sticky top-24 self-start">
 <div class="glass-panel rounded-[1.5rem] flex flex-col h-[calc(100vh-250px)] shadow-2xl overflow-hidden border border-outline-variant/10">
@@ -220,46 +116,7 @@
 <h2 class="font-headline font-extrabold text-xl tracking-tight uppercase">Pedido Actual</h2>
 <span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[0.65rem] font-black rounded-full uppercase tracking-widest">Activo</span>
 </div>
-<div class="flex-1 overflow-y-auto p-6 space-y-4">
-<!-- Order Item 1 -->
-<div class="flex items-center gap-4 group">
-<div class="w-12 h-12 rounded-lg bg-surface-container-lowest overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover opacity-70" data-alt="Small thumbnail of cocktail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwsJS_oxjQD89KuMnw1ChMT1KcRvvXK6Oy0zD_oTUKuyYnH9XfSYCXXYVLKQPV3NhCWAO-hsPPv673oLahWqTkrWIxiSq76ZNr44FObIanqnNUcBEDFqwX2jCUzKbOB71EjtEfp23VIXlC7reiyAa96QODlSFJudxKACAuLR11saryWgBJfQZYLtXOoZKcF7Mpa-AiXdF8_vjppaAJrozTzeXA4J5i42yLPpAJuQNXbo_nSgU5sTQL6utXXmQYUGD3oD-BGimIMlo"/>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-start">
-<p class="font-bold text-sm text-on-surface"> Margarita</p>
-<p class="font-headline font-bold text-sm text-primary">$14.500</p>
-</div>
-<div class="flex items-center gap-3 mt-1">
-<button class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-xs" data-icon="remove">remove</span>
-</button>
-<span class="text-sm font-bold w-4 text-center">2</span>
-<button class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-xs" data-icon="add">add</span>
-</button>
-<span class="ml-auto text-[0.6rem] text-on-surface-variant font-medium uppercase italic">Sin Sal</span>
-</div>
-</div>
-</div>
-<!-- Order Item 2 -->
-<div class="flex items-center gap-4 group">
-<div class="w-12 h-12 rounded-lg bg-surface-container-lowest overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover opacity-70" data-alt="Small thumbnail of bourbon drink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLIQGOPK8S935abb6NXuCXwKkJlaLF6UhG7X6QXPa_ROHrYeNIxVc11GUfe3R69ICJN2z--I6exvn37Y6f8YihaEm7ESrALDhyDcKQ7i-0bKc-RaCgsso3qAKi7q78aU6Yicc6oEOJUKPWFK36oI09I4ZdE28uve4KU_cQFh3w3ZrVWw59UyE3CJrnxPJzmVUpbNpPKCyqR_KxejWzx_dViK1D8ZL6IgAL6nuqo4sQHF8XREgCF_bIw03Dwbfzd6SHFYIP3ShRcB4"/>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-start">
-<p class="font-bold text-sm text-on-surface">Borbon Ahumado
-
-</p>
-<p class="font-headline font-bold text-sm text-primary">$16.000</p>
-</div>
-<div class="flex items-center gap-3 mt-1">
-<button class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-xs" data-icon="remove">remove</span>
-</button>
-<span class="text-sm font-bold w-4 text-center">1</span>
+<div id="hm-pedido-items" class="flex-1 overflow-y-auto p-6 space-y-4"></div><span class="text-sm font-bold w-4 text-center">1</span>
 <button class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
 <span class="material-symbols-outlined text-xs" data-icon="add">add</span>
 </button>
@@ -271,15 +128,15 @@
 <div class="p-8 bg-surface-container-highest/30 border-t border-outline-variant/10 space-y-4">
 <div class="flex justify-between items-center text-on-surface-variant">
 <span class="text-xs font-bold uppercase tracking-widest">Subtotal</span>
-<span class="font-headline font-bold">$45.00</span>
+<span class="font-headline font-bold" data-total="subtotal">$0</span>
 </div>
 <div class="flex justify-between items-center text-on-surface-variant">
 <span class="text-xs font-bold uppercase tracking-widest">Impuesto (8%)</span>
-<span class="font-headline font-bold">$3.60</span>
+<span class="font-headline font-bold" data-total="impuesto">$0</span>
 </div>
 <div class="flex justify-between items-end pt-2 border-t border-outline-variant/10">
 <span class="text-xs font-black uppercase tracking-[0.2em] text-primary">Monto Total</span>
-<span class="font-headline text-4xl font-extrabold text-on-surface tracking-tighter leading-none">$50.000</span>
+<span class="font-headline text-4xl font-extrabold text-on-surface tracking-tighter leading-none" data-total="total">$0</span>
 </div>
 <button class="w-full py-5 mt-4 bg-gradient-to-tr from-primary to-primary-container text-on-primary-container font-headline font-black text-lg rounded-xl shadow-[0_8px_24px_rgba(253,142,0,0.3)] transition-all active:scale-95 hover:brightness-110">
                         ENVIAR PEDIDO
@@ -291,26 +148,32 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#1C1B1B]/90 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
 <!-- Mesas -->
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="gestion_mesas.html">
 <span class="material-symbols-outlined text-2xl" data-icon="table_bar">table_bar</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Mesas</span>
 </a>
 <!-- Pedidos -->
-<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 transition-all duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 transition-all duration-150 ease-out" href="toma_pedidos.html">
 <span class="material-symbols-outlined text-2xl" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Pedidos</span>
 </a>
 <!-- Menú/POS -->
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="index.html">
 <span class="material-symbols-outlined text-2xl" data-icon="point_of_sale">point_of_sale</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Menú/POS</span>
 </a>
+<!-- Pago/Facturación -->
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="facturacion.html">
+<span class="material-symbols-outlined text-2xl" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Facturación</span>
+</a>
 <!-- Administración -->
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="adm_usuarios.html">
 <span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Administración</span>
 </a>
 </nav>
+<script src="script.js"></script>
 <!-- Ghost FAB for Special Requests -->
 <div class="fixed bottom-32 right-10 z-40 md:hidden">
 <button class="w-14 h-14 rounded-full bg-primary shadow-2xl flex items-center justify-center text-on-primary active:scale-90 transition-transform">

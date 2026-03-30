@@ -73,18 +73,26 @@
       }
     </script>
   </head>
-<body class="font-body selection:bg-primary selection:text-on-primary-container">
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
 <!-- Top Navigation Bar -->
 <header class="bg-[#131313] shadow-[0_12px_32px_rgba(0,0,0,0.5)] flex justify-between items-center w-full px-10 py-6 fixed top-0 z-50">
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-[#FFB77A] text-3xl">restaurant</span>
 <h1 class="text-[#E5E2E1] font-['Plus_Jakarta_Sans'] text-2xl font-black italic tracking-tight">Hakuna Matata</h1>
 </div>
-<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
 <button class="flex items-center gap-2 text-[#DDC1AE] hover:bg-[#393939] transition-all duration-200 px-4 py-2 rounded-xl active:scale-95">
 <span class="material-symbols-outlined">refresh</span>
 <span class="font-['Plus_Jakarta_Sans'] font-bold">Actualizar</span>
 </button>
+<button id="hm-filtro-mesas" class="bg-surface-container-low text-on-surface px-4 py-2 rounded-xl font-bold hover:bg-surface-bright transition-transform">Filtrar Mesas</button>
+<select id="hm-filtro-estado" class="bg-[#1c1b1b] text-on-surface px-3 py-2 rounded-xl border border-[#564334] focus:ring-2 focus:ring-primary-container">
+  <option value="todas">Todas</option>
+  <option value="libre">Libres</option>
+  <option value="ocupada">Ocupadas</option>
+  <option value="reservada">Reservadas</option>
+</select>
+</div>
 <div class="h-8 w-[1px] bg-surface-variant"></div>
 <button class="bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] px-6 py-2 rounded-xl font-bold font-['Plus_Jakarta_Sans'] shadow-[0_0_15px_rgba(253,142,0,0.4)] hover:scale-105 transition-transform">
                 Buscar
@@ -124,7 +132,7 @@
 <h3 class="text-on-surface-variant font-label uppercase tracking-widest text-sm mb-10">Zona Norte / Bar</h3>
 <div class="grid grid-cols-2 gap-8">
 <!-- Table 01 - Occupied -->
-<div class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="1" class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <div class="flex justify-between items-start">
 <span class="text-3xl font-headline font-bold text-on-surface">01</span>
 <span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">person</span>
@@ -135,7 +143,7 @@
 </div>
 </div>
 <!-- Table 02 - Available -->
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="2" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <div class="flex justify-between items-start">
 <span class="text-3xl font-headline font-bold text-on-surface">02</span>
 <span class="material-symbols-outlined text-secondary">person</span>
@@ -146,7 +154,7 @@
 </div>
 </div>
 <!-- Table 03 - Reserved/Soon to Pay -->
-<div class="aspect-square bg-tertiary-container/20 border border-tertiary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="3" class="aspect-square bg-tertiary-container/20 border border-tertiary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <div class="flex justify-between items-start">
 <span class="text-3xl font-headline font-bold text-on-surface">03</span>
 <span class="material-symbols-outlined text-tertiary">payments</span>
@@ -157,7 +165,7 @@
 </div>
 </div>
 <!-- Table 04 - Available -->
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="4" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <div class="flex justify-between items-start">
 <span class="text-3xl font-headline font-bold text-on-surface">04</span>
 <span class="material-symbols-outlined text-secondary">person</span>
@@ -174,7 +182,7 @@
 <h3 class="text-on-surface-variant font-label uppercase tracking-widest text-sm mb-10">Sala Principal</h3>
 <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
 <!-- Big Table 05 - Occupied -->
-<div class="col-span-2 row-span-2 aspect-[2/1] bg-error-container/30 border border-error/20 rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all cursor-pointer">
+<div data-mesa-id="5" class="col-span-2 row-span-2 aspect-[2/1] bg-error-container/30 border border-error/20 rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all cursor-pointer relative">
 <div class="flex justify-between items-start">
 <div>
 <span class="text-6xl font-headline font-black text-on-surface">05</span>
@@ -198,30 +206,30 @@
 </div>
 </div>
 <!-- Regular Tables -->
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="6" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">06</span>
 <p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
 </div>
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="7" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">07</span>
 <p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
 </div>
-<div class="aspect-square bg-tertiary-container/20 border border-tertiary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="8" class="aspect-square bg-tertiary-container/20 border border-tertiary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">08</span>
 <div class="flex items-center gap-1 text-tertiary">
 <span class="material-symbols-outlined">payments</span>
 <span class="font-bold text-lg">Cuenta</span>
 </div>
 </div>
-<div class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="9" class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">09</span>
 <p class="text-xl font-headline font-bold text-on-surface">4/4</p>
 </div>
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="10" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">10</span>
 <p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
 </div>
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="11" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">11</span>
 <p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
 </div>
@@ -232,15 +240,15 @@
 <div class="aspect-square bg-surface-container-high rounded-2xl flex items-center justify-center border-2 border-dashed border-outline-variant/30 text-outline-variant italic font-label">
                             Puerta de Terraza
                         </div>
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="12" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">T1</span>
 <p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
 </div>
-<div class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="13" class="aspect-square bg-secondary-container/20 border border-secondary/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">T2</span>
 <p class="text-xl font-headline font-bold text-secondary">LIBRE</p>
 </div>
-<div class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer">
+<div data-mesa-id="14" class="aspect-square bg-error-container/30 border border-error/20 rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition-all cursor-pointer relative">
 <span class="text-3xl font-headline font-bold text-on-surface">T3</span>
 <p class="text-xl font-headline font-bold text-on-surface">2/2</p>
 </div>
@@ -284,21 +292,26 @@
 </main>
 <!-- Bottom Navigation Bar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#1C1B1B]/90 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
-<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 transition-all duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 transition-all duration-150 ease-out" href="gestion_mesas.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">table_bar</span>
-<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Tables</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Mesas</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="toma_pedidos.html">
 <span class="material-symbols-outlined">receipt_long</span>
-<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Orders</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Pedidos</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="index.html">
 <span class="material-symbols-outlined">point_of_sale</span>
-<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Menu/POS</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Menú/POS</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="facturacion.html">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Facturación</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90" href="adm_usuarios.html">
 <span class="material-symbols-outlined">settings</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest mt-1">Administración</span>
 </a>
 </nav>
+<script src="script.js"></script>
 </body></html>

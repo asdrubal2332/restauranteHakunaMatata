@@ -135,7 +135,7 @@
 </div>
 </div>
 <div class="mt-8 flex gap-3">
-<button class="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary-container font-label text-xs font-bold py-3 rounded-xl scale-95 active:opacity-80 transition-all uppercase tracking-widest">Marcar Como Listo</button>
+<button class="btn-marcar-listo flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary-container font-label text-xs font-bold py-3 rounded-xl scale-95 active:opacity-80 transition-all uppercase tracking-widest">Marcar Como Listo</button>
 <button class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-xl text-on-surface-variant hover:bg-surface-bright transition-colors">
 <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
 </button>
@@ -169,7 +169,7 @@
 </div>
 </div>
 <div class="mt-8 flex gap-3">
-<button class="flex-1 bg-surface-container-high text-on-surface font-label text-xs font-bold py-3 rounded-xl hover:bg-surface-bright transition-all uppercase tracking-widest">Procesar Pedido</button>
+<button class="btn-procesar-pedido flex-1 bg-surface-container-high text-on-surface font-label text-xs font-bold py-3 rounded-xl hover:bg-surface-bright transition-all uppercase tracking-widest">Procesar Pedido</button>
 </div>
 </div>
 <!-- Ticket 3 -->
@@ -190,7 +190,7 @@
 </div>
 </div>
 <div class="mt-8 flex gap-3">
-<button class="flex-1 bg-surface-container-high text-on-surface font-label text-xs font-bold py-3 rounded-xl hover:bg-surface-bright transition-all uppercase tracking-widest">Procesar Pedido</button>
+<button class="btn-procesar-pedido flex-1 bg-surface-container-high text-on-surface font-label text-xs font-bold py-3 rounded-xl hover:bg-surface-bright transition-all uppercase tracking-widest">Procesar Pedido</button>
 </div>
 </div>
 </div>
@@ -254,7 +254,7 @@
 <div class="bg-gradient-to-br from-surface-container-high to-surface-container-low rounded-[1.5rem] p-8 shadow-xl">
 <h4 class="font-headline text-lg font-bold mb-6">Compra Rápida</h4>
 <div class="space-y-4">
-<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-bright transition-colors cursor-pointer group">
+<a class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-bright transition-colors group" href="https://wa.me/3189718888" target="_blank" rel="noopener noreferrer">
 <div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden">
 <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close up of a wooden crate filled with fresh vegetables and fruits with a rustic farm feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtQmcG2Rdg6hbP17WCcKjtBoU9gt5xaoM_CgdSjIjEwekPuhLJSCzjaGjDZk_UNM2-MFdLz4yHiLlNWHW8-kpM-1-fd2HqZ4LzALAuHSmTl2s4O3BWD3QMpAdaWoUFJkKasJ5IL0-ZnRpflDRB--Q8zmhmydHQ5USXvlKP4qLsulI1P-bbq_yZWgF5DyOGbV9ADVB4bDSW856CUr16iVzsX9aBpmLXIA1okoLLooSONxGJsilGgKTF1KtF6eBvnQsW9tMlL2M4GbY"/>
 </div>
@@ -263,39 +263,34 @@
 <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Carnes y Productos</p>
 </div>
 <span class="material-symbols-outlined ml-auto text-on-surface-variant text-lg" data-icon="call">call</span>
-</div>
-<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-bright transition-colors cursor-pointer group">
-<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A shelf in a modern pantry with neatly organized glass jars and specialty ingredients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkL0tdxVvobqFkLQMw7YnUSfGWkrgYdeEK5BYFl7StjEy-TIzCshmWHvgRKlXfdyIdQrkOOTIrj21YnuGl5jbOh7gKr-T-rVdsO6e9sBPUxglCOJpFYQAZyGpfza587a47RVh_RtBYs9FF4revgDVrRBusYuDJa0JGsagRYte48XXsB5nTZRrFYbK8cEXi0MKwJubbrJQNhxcxxnudTMx9aQNEIVBsAzU2U4E1_1iby1-PRaF3ZzrIwV-4rTEWu_7Bh2jjWyImYW8"/>
-</div>
-<div>
-<p class="font-headline text-sm font-bold">Global Spice Co.</p>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Productos Secos</p>
-</div>
-<span class="material-symbols-outlined ml-auto text-on-surface-variant text-lg" data-icon="mail">mail</span>
-</div>
+</a>
 </div>
 </div>
 </aside>
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#1C1B1B]/90 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="gestion_mesas.html">
 <span class="material-symbols-outlined mb-1" data-icon="table_bar">table_bar</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Mesas</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="toma_pedidos.html">
 <span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Pedidos</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="facturacion.html">
+<span class="material-symbols-outlined mb-1" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Facturación</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#FFB77A] to-[#FD8E00] text-[#131313] rounded-[1.5rem] px-6 py-2 shadow-[0_0_15px_rgba(253,142,0,0.4)] active:scale-90 duration-150 ease-out" href="index.html">
 <span class="material-symbols-outlined mb-1" data-icon="point_of_sale" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Menú/POS</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="#">
+<a class="flex flex-col items-center justify-center text-[#DDC1AE] p-2 opacity-60 hover:bg-[#201F1F] hover:opacity-100 transition-all active:scale-90 duration-150 ease-out" href="adm_usuarios.html">
 <span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
 <span class="font-['Inter'] text-[0.75rem] font-medium uppercase tracking-widest">Administración</span>
 </a>
 </nav>
+<script src="script.js"></script>
 </body></html>
 
